@@ -1,6 +1,6 @@
 # GPS-GSM_Tracker-
-Overview - 
-Description - 
+Overview - GPS-GSM Tracker is a device that sends its GPS coordinates via SMS.
+Description - Its components are: 
 Tools - 
 How to run - 
 How to compile - 
