@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=GPS-GSM_Tracker.map -O0 --gc-sections -LE:\Programy\CoIDE\configuration\ProgramData\GPS-GSM_Tracker -TE:\Programy\CoIDE\configuration\ProgramData\GPS-GSM_Tracker/arm-gcc-link.ld -g">
+      <target file="GPS-GSM_Tracker.elf" lastModified="15b2105c1bd">
+         <source file="..\obj\stm32f4xx_usart.o" lastModified="15b2105b95e"/>
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="15b2103f0aa"/>
+         <source file="..\obj\main.o" lastModified="15b2105ba19"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="15b2105bae1"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="15b2105bb81"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="15b2105bc18"/>
+         <source file="..\obj\misc.o" lastModified="15b2105bcb6"/>
+         <source file="..\obj\stm32f4xx_tim.o" lastModified="15b2105be04"/>
+      </target>
+   </processor>
+</history>

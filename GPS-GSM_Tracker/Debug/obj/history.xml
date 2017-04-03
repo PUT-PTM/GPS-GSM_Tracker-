@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\..\..\Projekty\PTM\GPS-GSM_Tracker-\cmsis_lib -I..\..\..\..\..\Projekty\PTM\GPS-GSM_Tracker- -I..\..\..\..\..\Projekty\PTM\GPS-GSM_Tracker-\cmsis -I..\..\..\..\..\Projekty\PTM -I..\..\..\..\..\Projekty\PTM\GPS-GSM_Tracker-\cmsis_boot -I..\..\..\..\..\Projekty\PTM\GPS-GSM_Tracker-\cmsis_lib\include">
+      <target file="stm32f4xx_tim.o" lastModified="15b2105be04">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="15b20efdde5"/>
+      </target>
+      <target file="stm32f4xx_rcc.o" lastModified="15b2105bae1">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="15b20ef9eb6"/>
+      </target>
+      <target file="misc.o" lastModified="15b2105bcb6">
+         <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="15b21047626"/>
+      </target>
+      <target file="system_stm32f4xx.o" lastModified="15b2105bc18">
+         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="15b20ef9f04"/>
+      </target>
+      <target file="stm32f4xx_gpio.o" lastModified="15b2105bb81">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="15b20efb362"/>
+      </target>
+      <target file="main.o" lastModified="15b2105ba19">
+         <source file="..\..\..\main.c" lastModified="15b2105a6ec"/>
+      </target>
+      <target file="stm32f4xx_usart.o" lastModified="15b2105b95e">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_usart.c" lastModified="15b20fde469"/>
+      </target>
+      <target file="startup_stm32f4xx.o" lastModified="15b2103f0aa">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="15b20ef9ebd"/>
+      </target>
+   </processor>
+</history>
