@@ -4,6 +4,34 @@
 #include "stm32f4xx_tim.h"
 #include "misc.h"
 
+const unsigned char header[] = {0xB5, 0x62};
+struct Nav_Posllh
+{
+	unsigned char header;
+	unsigned char id;
+	unsigned short len;
+	unsigned long iTDW;
+	long lon;
+	long lat;
+	long height;
+	long hMSL;
+	unsigned long hAcc;
+	unsigned long yAcc;
+};
+
+Nav_Posllh NAV;
+
+void Cheksum(unsigned char* CS)
+{
+	CS[0] = 0;
+	CS[1] = 0;
+	for(int i = 0; i < (int)sizeof(NAV); i++)
+	{
+		CS[0] = CS[0] + ((unsigned char*)(&NAV))[i];
+		CS[1] = CS[1] + CS[0];
+	}
+}
+
 void GPS_Configuration() //PINY C 10 i 11
 {
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
@@ -50,7 +78,31 @@ void GPS_Configuration() //PINY C 10 i 11
 	// wlaczenie przerwan od ukladu USART
 	NVIC_EnableIRQ(USART3_IRQn);
 }
-
+/*void GPS_Message(char* message)
+{
+	uint8_t data;
+	GpsPut('$');
+	while((data = message) != 0)
+	{
+		GpsPut(data);
+		message++;
+	}
+	GpsPut('*');
+	GpsPut(HEX_CHARS[cs >> 4]);
+	GpsPut(HEX_CHARS[cs & 0x0F]);
+	GpsPut('\r');
+	GpsPut('\n');
+	USART_ITConfig(GPS_USART, USART_IT_TXE, ENABLE);
+}*/
+void USART3_IRQHandler(void)
+{
+    // sprawdzenie flagi zwiazanej z odebraniem danych przez USART
+    if(USART_GetITStatus(USART3, USART_IT_RXNE) != RESET)
+    {
+        // odebrany bajt znajduje sie w rejestrze USART3->DR
+    	uint16_t byte = USART_ReceiveData(USART3);
+    }
+}
 int main(void)
 {
 	SystemInit();

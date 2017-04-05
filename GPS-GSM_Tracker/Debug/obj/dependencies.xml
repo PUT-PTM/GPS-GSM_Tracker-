@@ -10,12 +10,12 @@
       </source>
       <source file="..\..\..\cmsis_boot\system_stm32f4xx.h" lastModified="15b20ef9f05">
       </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="15b20ef9f04">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="15b20efdde5">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
-      </source>
-      <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="15b20ef9f04">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h" lastModified="15b20efb352">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
@@ -40,6 +40,9 @@
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_usart.h" lastModified="15b20fde451">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="15b21047626">
+         <include file="..\..\..\cmsis_lib\include\misc.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_usart.c" lastModified="15b20fde469">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_usart.h"/>
