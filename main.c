@@ -3,34 +3,13 @@
 #include "stm32f4xx_usart.h"
 #include "stm32f4xx_tim.h"
 #include "misc.h"
+#include <stdio.h>
+#include <string.h>
 
-const unsigned char header[] = {0xB5, 0x62};
-struct Nav_Posllh
-{
-	unsigned char header;
-	unsigned char id;
-	unsigned short len;
-	unsigned long iTDW;
-	long lon;
-	long lat;
-	long height;
-	long hMSL;
-	unsigned long hAcc;
-	unsigned long yAcc;
-};
-
-Nav_Posllh NAV;
-
-void Cheksum(unsigned char* CS)
-{
-	CS[0] = 0;
-	CS[1] = 0;
-	for(int i = 0; i < (int)sizeof(NAV); i++)
-	{
-		CS[0] = CS[0] + ((unsigned char*)(&NAV))[i];
-		CS[1] = CS[1] + CS[0];
-	}
-}
+char text[36];
+char *split_text[8];
+int i=0;
+char* przyklad = "$GPGLL,4916.45,N,12311.12,W,225444,A";
 
 void GPS_Configuration() //PINY C 10 i 11
 {
@@ -78,35 +57,38 @@ void GPS_Configuration() //PINY C 10 i 11
 	// wlaczenie przerwan od ukladu USART
 	NVIC_EnableIRQ(USART3_IRQn);
 }
-/*void GPS_Message(char* message)
+void GPS_Parser(char* message)
 {
-	uint8_t data;
-	GpsPut('$');
-	while((data = message) != 0)
+	int j=0;
+	char split_text[j] = strtok(message, ",");
+	j++;
+	while(split_text[j]!=0 && j!=7)
 	{
-		GpsPut(data);
-		message++;
+		split_text[j] = strtok(0, ",");
+		j++;
 	}
-	GpsPut('*');
-	GpsPut(HEX_CHARS[cs >> 4]);
-	GpsPut(HEX_CHARS[cs & 0x0F]);
-	GpsPut('\r');
-	GpsPut('\n');
-	USART_ITConfig(GPS_USART, USART_IT_TXE, ENABLE);
-}*/
+}
 void USART3_IRQHandler(void)
 {
     // sprawdzenie flagi zwiazanej z odebraniem danych przez USART
     if(USART_GetITStatus(USART3, USART_IT_RXNE) != RESET)
     {
         // odebrany bajt znajduje sie w rejestrze USART3->DR
-    	uint16_t byte = USART_ReceiveData(USART3);
+    	uint8_t byte = USART_ReceiveData(USART3);
+    	if(byte=='$' || i>35)
+    	{
+    		GPS_Parser(text);
+    		i=0;
+    	}
+    	byte = text[i];
+    	i++;
     }
 }
 int main(void)
 {
 	SystemInit();
 	GPS_Configuration();
+	GPS_Parser("$GPGLL,4916.45,N,12311.12,W,225444,A");
     while(1)
     {
     }
