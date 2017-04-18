@@ -11,7 +11,7 @@ char *split_text[8];
 int i=0;
 char* przyklad = "$GPGLL,4916.45,N,12311.12,W,225444,A";
 
-void GPS_Configuration() //PINY C 10 i 11
+void GPS_Configuration() //PIN C 10, C 11
 {
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
 	// wlaczenie taktowania wybranego uk³adu USART
@@ -60,11 +60,13 @@ void GPS_Configuration() //PINY C 10 i 11
 void GPS_Parser(char* message)
 {
 	int j=0;
-	char split_text[j] = strtok(message, ",");
+	char* text = strtok(message, ",");
+	split_text[j]=text;
 	j++;
-	while(split_text[j]!=0 && j!=7)
+	while(text!=0 && j!=7)
 	{
-		split_text[j] = strtok(0, ",");
+		text = strtok(0, ",");
+		split_text[j]=text;
 		j++;
 	}
 }
@@ -88,7 +90,7 @@ int main(void)
 {
 	SystemInit();
 	GPS_Configuration();
-	GPS_Parser("$GPGLL,4916.45,N,12311.12,W,225444,A");
+	//GPS_Parser("$GPGLL,4916.45,N,12311.12,W,225444,A");
     while(1)
     {
     }
