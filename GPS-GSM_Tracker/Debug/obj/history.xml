@@ -7,17 +7,17 @@
       <target file="stm32f4xx_rcc.o" lastModified="15b80a2dad5">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="15b20ef9eb6"/>
       </target>
-      <target file="misc.o" lastModified="15b80a2ddeb">
-         <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="15b21047626"/>
-      </target>
       <target file="system_stm32f4xx.o" lastModified="15b80a2dd2d">
          <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="15b20ef9f04"/>
+      </target>
+      <target file="misc.o" lastModified="15b80a2ddeb">
+         <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="15b21047626"/>
       </target>
       <target file="stm32f4xx_gpio.o" lastModified="15b80a2dba0">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="15b20efb362"/>
       </target>
-      <target file="main.o" lastModified="15b80a2d9a2">
-         <source file="..\..\..\main.c" lastModified="15b80a2c3fe"/>
+      <target file="main.o" lastModified="15b875fdaec">
+         <source file="..\..\..\main.c" lastModified="15b875fcece"/>
       </target>
       <target file="stm32f4xx_usart.o" lastModified="15b80a2d76a">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_usart.c" lastModified="15b20fde469"/>

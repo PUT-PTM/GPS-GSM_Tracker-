@@ -9,8 +9,7 @@
 char text[36];
 char *split_text[8];
 int i=0;
-char* przyklad = "$GPGLL,4916.45,N,12311.12,W,225444,A";
-
+uint8_t podglad;
 void GPS_Configuration() //PIN C 10, C 11
 {
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
@@ -77,6 +76,7 @@ void USART3_IRQHandler(void)
     {
         // odebrany bajt znajduje sie w rejestrze USART3->DR
     	uint8_t byte = USART_ReceiveData(USART3);
+    	podglad = USART_ReceiveData(USART3);
     	if(byte=='$' || i>35)
     	{
     		GPS_Parser(text);
@@ -90,7 +90,6 @@ int main(void)
 {
 	SystemInit();
 	GPS_Configuration();
-	//GPS_Parser("$GPGLL,4916.45,N,12311.12,W,225444,A");
     while(1)
     {
     }
