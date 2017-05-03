@@ -27,12 +27,12 @@
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="E:/Projekty/PTM/GPS-GSM_Tracker-/main.c" title="main.c" tooltip="E:/Projekty/PTM/GPS-GSM_Tracker-/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/GPS-GSM_Tracker/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="240" selectionTopPixel="960"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="235" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
 <view id="org.coocox.builder.ui.views.ProjectView" partName="Project">
-<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="9">
+<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="2">
 <expanded>
 <element path="/GPS-GSM_Tracker"/>
 <element path="/GPS-GSM_Tracker/cmsis"/>
@@ -42,7 +42,7 @@
 <element path="/GPS-GSM_Tracker/cmsis_lib/include"/>
 </expanded>
 <selection>
-<element path="/GPS-GSM_Tracker/main.c"/>
+<element path="/GPS-GSM_Tracker/cmsis_boot/stm32f4xx.h"/>
 </selection>
 </viewState>
 </view>
@@ -115,8 +115,8 @@
 </presentation>
 </folder>
 </info>
-<info part="org.coocox.builder.ui.exampleView" ratio="0.21944036" ratioLeft="298" ratioRight="1060" relationship="2" relative="org.eclipse.ui.internal.ViewStack@187ef5"/>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@fc37c" ratio="0.88425046" ratioLeft="932" ratioRight="122" relationship="2" relative="org.coocox.builder.ui.exampleView">
+<info part="org.coocox.builder.ui.exampleView" ratio="0.17378049" ratioLeft="114" ratioRight="542" relationship="2" relative="org.eclipse.ui.internal.ViewStack@187ef5"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@fc37c" ratio="0.7173333" ratioLeft="269" ratioRight="106" relationship="2" relative="org.coocox.builder.ui.exampleView">
 <folder activePageID="org.coocox.component.ui.Help" appearance="2" expanded="2">
 <page content="org.coocox.component.ui.Help" label="Help"/>
 <page content="org.eclipse.debug.ui.BreakpointView" label="LabelNotFound"/>
@@ -144,157 +144,159 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage">
-<org.coocox.welcome.ui.WelcomePage/>
-</editor>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GPS-GSM_Tracker/main.c"/>
-<editor factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser">
-<subPage horizontalPosition="0" selectedItemId="524" subPageIndex="2" verticalPosition="528"/>
-</editor>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GPS-GSM_Tracker/cmsis_boot/stm32f4xx_conf.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GPS-GSM_Tracker/cmsis_boot/stm32f4xx.h"/>
 </editors>
-<item historyLabel="welcome" index="0"/>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="2664" y="0"/>
-</item>
-<item historyLabel="Repository" index="2"/>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="2664" y="0"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="977" y="0"/>
-</item>
-<item historyLabel="Repository" index="2"/>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="977" y="0"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="3108" y="0"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="163" y="0"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position/>
-</item>
-<item historyLabel="main.c" index="1">
-<position/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="413" y="31"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="599" y="0"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="413" y="31"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="460" y="0"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="454" y="0"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="599" y="0"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="413" y="31"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="499" y="0"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="599" y="0"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="595" y="0"/>
-</item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="537" y="0"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="564" y="0"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="595" y="0"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="567" y="0"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="577" y="0"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="593" y="0"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="290" y="0"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="394" y="17"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="259" y="0"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="4084" y="0"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="4206" y="0"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="3591" y="24"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="173" y="0"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="3546" y="43"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="173" y="0"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="3563" y="0"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="3619" y="35"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="3146" y="0"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="3254" y="25"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="3319" y="0"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="3400" y="54"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="213" y="0"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="323" y="0"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="3422" y="0"/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position/>
 </item>
-<item historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position/>
 </item>
-<item active="true" historyLabel="main.c" index="1">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="3439" y="2"/>
+</item>
+<item historyLabel="stm32f4xx_conf.h" index="1">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="stm32f4xx.h" index="2">
+<position info="not_deleted" x="3574" y="0"/>
+</item>
+<item historyLabel="stm32f4xx_conf.h" index="1">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position/>
+</item>
+<item historyLabel="main.c" index="0">
+<position/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="5352" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="5411" y="22"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="6754" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="7929" y="3"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="7927" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="7929" y="3"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="6449" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="6825" y="43"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="287" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="5411" y="22"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4202" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4487" y="43"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="342" y="0"/>
+</item>
+<item active="true" historyLabel="main.c" index="0">
+<position info="not_deleted" x="3810" y="41"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -303,6 +305,12 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" tooltip="GPS-GSM_Tracker/cmsis_boot/stm32f4xx.h">
+<persistable path="/GPS-GSM_Tracker/cmsis_boot/stm32f4xx.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_conf.h" tooltip="GPS-GSM_Tracker/cmsis_boot/stm32f4xx_conf.h">
+<persistable path="/GPS-GSM_Tracker/cmsis_boot/stm32f4xx_conf.h"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="GPS-GSM_Tracker/main.c">
 <persistable path="/GPS-GSM_Tracker/main.c"/>
 </file>
@@ -344,12 +352,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="GPS-GSM_Tracker-/main.c">
 <persistable path="/GPS-GSM_Tracker-/main.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="test/main.c">
-<persistable path="/test/main.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="test/main.c">
-<persistable path="/test/main.c"/>
 </file>
 </mruList>
 </workbench>

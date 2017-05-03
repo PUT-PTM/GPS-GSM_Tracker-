@@ -23,7 +23,7 @@
       <source file="..\..\..\cmsis_lib\include\misc.h" lastModified="15b21047625">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\cmsis_boot\stm32f4xx.h" lastModified="15b20efa2e9">
+      <source file="..\..\..\cmsis_boot\stm32f4xx.h" lastModified="15ba4b91662">
          <include file="..\..\..\cmsis\core_cm4.h"/>
          <include file="..\..\..\cmsis_boot\system_stm32f4xx.h"/>
          <include file="..\..\..\cmsis_boot\stm32f4xx_conf.h"/>
