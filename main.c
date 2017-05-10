@@ -115,10 +115,6 @@ void SIM_Configuration() //PIN A 2, A 3
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
 	NVIC_Init(&NVIC_InitStructure);
 	NVIC_EnableIRQ(USART2_IRQn);
-	while(sim_ready==0)
-	{
-		SendOrder("AT+CPIN?",9);
-	}
 	SendOrder("AT+CMGF=1",9);
 	SendOrder("AT+CSCS=\"GSM\"",13);
 }
@@ -160,10 +156,6 @@ void USART2_IRQHandler(void) //TEST
     	if (gsm_char == '\r')
     	{
     		pos=0;
-    		if(strncmp(in_gsm_message, "+CPIN: READY",11))
-    		   {
-    		    	sim_ready=1;
-    		   }
     		if(strncmp(in_gsm_message, "+CMTI: \"SM\"",11))
     		{
     			SendOrder("AT+CMGL=\"REC UNREAD\"",20);

@@ -85,6 +85,7 @@ Discarded input sections
  .bss           0x00000000        0x0 ..\obj\startup_stm32f4xx.o
  .text          0x00000000        0x0 ..\obj\main.o
  .data          0x00000000        0x0 ..\obj\main.o
+ .bss           0x00000000        0x2 ..\obj\main.o
  .text          0x00000000        0x0 ..\obj\stm32f4xx_rcc.o
  .bss           0x00000000        0x0 ..\obj\stm32f4xx_rcc.o
  .text.RCC_DeInit
@@ -439,7 +440,7 @@ Linker script and memory map
 
                 0x20020000                _eram = 0x20020000
 
-.text           0x08000000     0x14f6
+.text           0x08000000     0x14da
  *(.isr_vector)
  .isr_vector    0x08000000      0x188 ..\obj\startup_stm32f4xx.o
                 0x08000000                g_pfnVectors
@@ -570,45 +571,46 @@ Linker script and memory map
                 0x0800070c       0xb8 ..\obj\main.o
                 0x0800070c                GPS_Configuration
  .text.SIM_Configuration
-                0x080007c4       0xe8 ..\obj\main.o
+                0x080007c4       0xcc ..\obj\main.o
                 0x080007c4                SIM_Configuration
  .text.USART3_IRQHandler
-                0x080008ac       0xec ..\obj\main.o
-                0x080008ac                USART3_IRQHandler
+                0x08000890       0xec ..\obj\main.o
+                0x08000890                USART3_IRQHandler
  .text.USART2_IRQHandler
-                0x08000998      0x174 ..\obj\main.o
-                0x08000998                USART2_IRQHandler
- .text.main     0x08000b0c       0x14 ..\obj\main.o
-                0x08000b0c                main
+                0x0800097c      0x154 ..\obj\main.o
+                0x0800097c                USART2_IRQHandler
+ .text.main     0x08000ad0       0x14 ..\obj\main.o
+                0x08000ad0                main
  .text.RCC_GetClocksFreq
-                0x08000b20      0x154 ..\obj\stm32f4xx_rcc.o
-                0x08000b20                RCC_GetClocksFreq
+                0x08000ae4      0x154 ..\obj\stm32f4xx_rcc.o
+                0x08000ae4                RCC_GetClocksFreq
  .text.RCC_AHB1PeriphClockCmd
-                0x08000c74       0x3c ..\obj\stm32f4xx_rcc.o
-                0x08000c74                RCC_AHB1PeriphClockCmd
+                0x08000c38       0x3c ..\obj\stm32f4xx_rcc.o
+                0x08000c38                RCC_AHB1PeriphClockCmd
  .text.RCC_APB1PeriphClockCmd
-                0x08000cb0       0x3c ..\obj\stm32f4xx_rcc.o
-                0x08000cb0                RCC_APB1PeriphClockCmd
+                0x08000c74       0x3c ..\obj\stm32f4xx_rcc.o
+                0x08000c74                RCC_APB1PeriphClockCmd
  .text.GPIO_Init
-                0x08000cec      0x11c ..\obj\stm32f4xx_gpio.o
-                0x08000cec                GPIO_Init
+                0x08000cb0      0x11c ..\obj\stm32f4xx_gpio.o
+                0x08000cb0                GPIO_Init
  .text.GPIO_PinAFConfig
-                0x08000e08       0x90 ..\obj\stm32f4xx_gpio.o
-                0x08000e08                GPIO_PinAFConfig
+                0x08000dcc       0x90 ..\obj\stm32f4xx_gpio.o
+                0x08000dcc                GPIO_PinAFConfig
  .text.SystemInit
-                0x08000e98       0x5c ..\obj\system_stm32f4xx.o
-                0x08000e98                SystemInit
+                0x08000e5c       0x5c ..\obj\system_stm32f4xx.o
+                0x08000e5c                SystemInit
  .text.SetSysClock
-                0x08000ef4       0xf4 ..\obj\system_stm32f4xx.o
+                0x08000eb8       0xf4 ..\obj\system_stm32f4xx.o
  .text.NVIC_Init
-                0x08000fe8       0xc0 ..\obj\misc.o
-                0x08000fe8                NVIC_Init
- .text.memset   0x080010a8       0x9c c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg.a(lib_a-memset.o)
-                0x080010a8                memset
- .text.strcat   0x08001144       0x40 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg.a(lib_a-strcat.o)
-                0x08001144                strcat
- .text.strcpy   0x08001184       0xbc c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg.a(lib_a-strcpy.o)
-                0x08001184                strcpy
+                0x08000fac       0xc0 ..\obj\misc.o
+                0x08000fac                NVIC_Init
+ .text.memset   0x0800106c       0x9c c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg.a(lib_a-memset.o)
+                0x0800106c                memset
+ .text.strcat   0x08001108       0x40 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg.a(lib_a-strcat.o)
+                0x08001108                strcat
+ .text.strcpy   0x08001148       0xbc c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg.a(lib_a-strcpy.o)
+                0x08001148                strcpy
+ *fill*         0x08001204       0x3c 
  .text          0x08001240       0xdc c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg.a(lib_a-strlen.o)
                 0x08001240                strlen
  .text.strncmp  0x0800131c       0xa0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg.a(lib_a-strncmp.o)
@@ -628,38 +630,38 @@ Linker script and memory map
  *(SORT(.dtors.*))
  *(.dtors)
  *(.rodata*)
- .rodata        0x08001424       0xd2 ..\obj\main.o
+ .rodata        0x08001424       0xb6 ..\obj\main.o
  *(.eh_fram e*)
 
-.glue_7         0x080014f8        0x0
- .glue_7        0x080014f8        0x0 linker stubs
+.glue_7         0x080014dc        0x0
+ .glue_7        0x080014dc        0x0 linker stubs
 
-.glue_7t        0x080014f8        0x0
- .glue_7t       0x080014f8        0x0 linker stubs
+.glue_7t        0x080014dc        0x0
+ .glue_7t       0x080014dc        0x0 linker stubs
 
-.vfp11_veneer   0x080014f8        0x0
- .vfp11_veneer  0x080014f8        0x0 linker stubs
+.vfp11_veneer   0x080014dc        0x0
+ .vfp11_veneer  0x080014dc        0x0 linker stubs
 
-.v4_bx          0x080014f8        0x0
- .v4_bx         0x080014f8        0x0 linker stubs
+.v4_bx          0x080014dc        0x0
+ .v4_bx         0x080014dc        0x0 linker stubs
 
-.iplt           0x080014f8        0x0
- .iplt          0x080014f8        0x0 ..\obj\stm32f4xx_usart.o
+.iplt           0x080014dc        0x0
+ .iplt          0x080014dc        0x0 ..\obj\stm32f4xx_usart.o
 
-.rel.dyn        0x080014f8        0x0
- .rel.iplt      0x080014f8        0x0 ..\obj\stm32f4xx_usart.o
+.rel.dyn        0x080014dc        0x0
+ .rel.iplt      0x080014dc        0x0 ..\obj\stm32f4xx_usart.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x080014f8                __exidx_start = .
+                0x080014dc                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x080014f8                __exidx_end = .
-                0x080014f8                __etext = .
-                0x080014f6                _sidata = __etext
+                0x080014dc                __exidx_end = .
+                0x080014dc                __etext = .
+                0x080014da                _sidata = __etext
 
-.data           0x20000000       0x10 load address 0x080014f6
+.data           0x20000000       0x10 load address 0x080014da
                 0x20000000                __data_start__ = .
                 0x20000000                _sdata = __data_start__
  *(vtable)
@@ -684,50 +686,48 @@ Linker script and memory map
                 0x20000010                __data_end__ = .
                 0x20000010                _edata = __data_end__
 
-.igot.plt       0x20000010        0x0 load address 0x08001508
+.igot.plt       0x20000010        0x0 load address 0x080014ec
  .igot.plt      0x20000010        0x0 ..\obj\stm32f4xx_usart.o
 
-.bss            0x20000010      0x168 load address 0x08001508
+.bss            0x20000010      0x164 load address 0x080014ec
                 0x20000010                . = ALIGN (0x4)
                 0x20000010                __bss_start__ = .
                 0x20000010                _sbss = __bss_start__
  *(.bss*)
- .bss           0x20000010        0x2 ..\obj\main.o
-                0x20000010                sim_ready
  *(COMMON)
- *fill*         0x20000012        0x2 
- COMMON         0x20000014      0x162 ..\obj\main.o
-                0x20000014                pos
-                0x20000018                position
-                0x2000001c                number_size
-                0x20000020                number
-                0x20000040                in_gsm_message
-                0x200000c0                longitude
-                0x200000d0                time
-                0x200000e0                podglad
-                0x200000e4                latitude
-                0x200000f4                gps_message
-                0x20000174                gps_char
-                0x20000175                gsm_char
-                0x20000178                . = ALIGN (0x4)
- *fill*         0x20000176        0x2 
-                0x20000178                __bss_end__ = .
-                0x20000178                _ebss = __bss_end__
+ COMMON         0x20000010      0x162 ..\obj\main.o
+                0x20000010                pos
+                0x20000014                position
+                0x20000018                number_size
+                0x2000001c                number
+                0x2000003c                in_gsm_message
+                0x200000bc                longitude
+                0x200000cc                time
+                0x200000dc                podglad
+                0x200000e0                latitude
+                0x200000f0                gps_message
+                0x20000170                gps_char
+                0x20000171                gsm_char
+                0x20000174                . = ALIGN (0x4)
+ *fill*         0x20000172        0x2 
+                0x20000174                __bss_end__ = .
+                0x20000174                _ebss = __bss_end__
 
-.heap           0x20000178        0x0
-                0x20000178                __end__ = .
-                0x20000178                _end = __end__
-                0x20000178                end = __end__
+.heap           0x20000174        0x0
+                0x20000174                __end__ = .
+                0x20000174                _end = __end__
+                0x20000174                end = __end__
  *(.heap*)
-                0x20000178                __HeapLimit = .
+                0x20000174                __HeapLimit = .
 
-.co_stack       0x20000178      0x800 load address 0x08001670
+.co_stack       0x20000174      0x804 load address 0x08001650
                 0x20000178                . = ALIGN (0x8)
+ *fill*         0x20000174        0x4 
  *(.co_stack .co_stack.*)
  .co_stack      0x20000178      0x800 ..\obj\startup_stm32f4xx.o
                 0x20000178                pulStack
                 0x20020000                __StackTop = (ORIGIN (ram) + LENGTH (ram))
-                0x2001f800                __StackLimit = (__StackTop - SIZEOF (.co_stack))
+                0x2001f7fc                __StackLimit = (__StackTop - SIZEOF (.co_stack))
                 [!provide]                PROVIDE (__stack, __StackTop)
                 0x00000001                ASSERT ((__StackLimit >= __HeapLimit), region ram  overflowed with stack)
 LOAD ..\obj\stm32f4xx_usart.o
@@ -788,14 +788,14 @@ OUTPUT(GPS-GSM_Tracker.elf elf32-littlearm)
  .debug_ranges  0x00000338       0x20 ..\obj\system_stm32f4xx.o
  .debug_ranges  0x00000358       0x30 ..\obj\misc.o
 
-.debug_line     0x00000000     0x17a2
+.debug_line     0x00000000     0x179d
  .debug_line    0x00000000      0x4fd ..\obj\stm32f4xx_usart.o
  .debug_line    0x000004fd       0xaa ..\obj\startup_stm32f4xx.o
- .debug_line    0x000005a7      0x3d8 ..\obj\main.o
- .debug_line    0x0000097f      0x5e9 ..\obj\stm32f4xx_rcc.o
- .debug_line    0x00000f68      0x3a4 ..\obj\stm32f4xx_gpio.o
- .debug_line    0x0000130c      0x214 ..\obj\system_stm32f4xx.o
- .debug_line    0x00001520      0x282 ..\obj\misc.o
+ .debug_line    0x000005a7      0x3d3 ..\obj\main.o
+ .debug_line    0x0000097a      0x5e9 ..\obj\stm32f4xx_rcc.o
+ .debug_line    0x00000f63      0x3a4 ..\obj\stm32f4xx_gpio.o
+ .debug_line    0x00001307      0x214 ..\obj\system_stm32f4xx.o
+ .debug_line    0x0000151b      0x282 ..\obj\misc.o
 
 .debug_str      0x00000000     0x19e4
  .debug_str     0x00000000      0x61d ..\obj\stm32f4xx_usart.o
