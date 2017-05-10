@@ -7,8 +7,50 @@
 #include <string.h>
 //https://www.google.com/maps/search/09.1458483,016.5176548/
 int position;
-char gps_char, gps_message[128], time[16], latitude[16], longitude[16];
+short number_size;
+short pos;
+char gsm_char, gps_char, gps_message[128], time[16], latitude[16], longitude[16], in_gsm_message[128], number[32];
 uint16_t podglad;
+bool sim_ready=false;
+void SendOrder(char order[128],int size)
+{
+	for(int i = 0; i<size; i++)
+	{
+	 	USART_SendData(USART2, order[i]);
+	}
+	USART_SendData(USART2, '\r');
+}
+void SendPos()
+{
+	char out_message[16]="\nlatitude: ";
+	for(int i = 0; i<11; i++)
+	{
+	 	USART_SendData(USART2, out_message[i]);
+	}
+	for(int i = 0; i<16; i++)
+	{
+	 	USART_SendData(USART2, latitude[i]);
+	}
+	char out_message[256]="\nlongitude: ";
+	for(int i = 0; i<12; i++)
+	{
+	 	USART_SendData(USART2, out_message[i]);
+	}
+	for(int i = 0; i<16; i++)
+	{
+	 	USART_SendData(USART2, longitude[i]);
+	}
+	char out_message[256]="\ntime: ";
+	for(int i = 0; i<7; i++)
+	{
+	 	USART_SendData(USART2, out_message[i]);
+	}
+	for(int i = 0; i<16; i++)
+	{
+	 	USART_SendData(USART2, time[i]);
+	}
+	USART_SendData(USART2, 26);
+}
 int IsDigit(int c)
 {
 	return ((c >= '0') && (c <= '9'));
@@ -74,6 +116,13 @@ void SIM_Configuration() //PIN A 2, A 3
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
 	NVIC_Init(&NVIC_InitStructure);
 	NVIC_EnableIRQ(USART2_IRQn);
+	while(sim_ready==false)
+	{
+		SendOrder("AT+CPIN?",9);
+		Sleep(300);
+	}
+	SendOrder("AT+CMGF=1",9);
+	SendOrder("AT+CSCS=\"GSM\"",13);
 }
 void USART3_IRQHandler(void)
 {
@@ -109,14 +158,42 @@ void USART2_IRQHandler(void) //TEST
     if(USART_GetITStatus(USART2, USART_IT_RXNE) != RESET)
     {
         // odebrany bajt znajduje sie w rejestrze USART3->DR
-    	uint16_t byte = USART_ReceiveData(USART2);
-    	podglad = USART_ReceiveData(USART2);
-    	//czekaj na opró¿nienie bufora wyjœciowego
-    	while(USART_GetFlagStatus(USART2, USART_FLAG_TXE) == RESET);
+    	gsm_char = USART_ReceiveData(USART2);
+    	if (gsm_char == '\r')
+    	{
+    		pos=0;
+    		if(strncmp(in_gsm_message, "+CPIN: READY",11))
+    		   {
+    		    	sim_ready=true;
+    		   }
+    		if(strncmp(in_gsm_message, "+CMTI: \"SM\"",11))
+    		{
+    			SendOrder("AT+CMGL=\"REC UNREAD\"",20);
+    		}
+    		if(strncmp(in_gsm_message, "+CMGR: \"REC UNREAD\",\"",21))
+    		{
+    			number_size=0;
+    			short number_it=21;
+    			while(in_gsm_message[number_it]!='\"')
+    			{
+    				number[number_size]=in_gsm_message[number_it];
+    				number_size++;
+    				number_it++;
+    			}
+    			SendOrder("AT+SMGS=\"" + number + "\"", 10 + number_size);
+    			SendPos();
+    			SendOrder("AT+CMGDA=\"DEL UNREAD\"", 10 + number_size);
+
+    		}
+    	}
+    	else
+    		in_gsm_message[pos++] = gsm_char;
+    	//czekaj na oprÃ³Å¼nienie bufora wyjÅ›ciowego
+    	//while(USART_GetFlagStatus(USART2, USART_FLAG_TXE) == RESET);
     	// wyslanie danych
-    	USART_SendData(USART2, byte);
+    	//USART_SendData(USART2, byte);
     	// czekaj az dane zostana wyslane
-    	while (USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);
+    	//while (USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);
     }
 }
 int main(void)
@@ -124,6 +201,7 @@ int main(void)
 	SystemInit();
 	SIM_Configuration();
 	GPS_Configuration();
+
     while(1)
     {
     }
