@@ -178,7 +178,7 @@ void USART2_IRQHandler(void) //TEST
     		    strcat(send,"\"");
     			SendOrder(send, 10 + number_size);
     			SendPos();
-    			SendOrder("AT+CMGDA=\"DEL UNREAD\"", 10 + number_size);
+    			SendOrder("AT+CMGDA=\"DEL READ\"", 10 + number_size);
 
     		}
     	}
