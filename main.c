@@ -7,7 +7,7 @@
 #include <string.h>
 //https://www.google.com/maps/search/09.1458483,016.5176548/
 int position;
-short number_size, sim_ready=0;;
+short number_size;
 short pos;
 char gsm_char, gps_char, gps_message[128], time[16], latitude[16], longitude[16], in_gsm_message[128], number[32];
 uint16_t podglad;
@@ -115,6 +115,7 @@ void SIM_Configuration() //PIN A 2, A 3
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
 	NVIC_Init(&NVIC_InitStructure);
 	NVIC_EnableIRQ(USART2_IRQn);
+
 	SendOrder("AT+CMGF=1",9);
 	SendOrder("AT+CSCS=\"GSM\"",13);
 }
@@ -156,6 +157,7 @@ void USART2_IRQHandler(void) //TEST
     	if (gsm_char == '\r')
     	{
     		pos=0;
+
     		if(strncmp(in_gsm_message, "+CMTI: \"SM\"",11))
     		{
     			SendOrder("AT+CMGL=\"REC UNREAD\"",20);
@@ -182,7 +184,6 @@ void USART2_IRQHandler(void) //TEST
     	}
     	else
     		in_gsm_message[pos++] = gsm_char;
-    	//czekaj na opró¿nienie bufora wyjœciowego
     	//while(USART_GetFlagStatus(USART2, USART_FLAG_TXE) == RESET);
     	// wyslanie danych
     	//USART_SendData(USART2, byte);
