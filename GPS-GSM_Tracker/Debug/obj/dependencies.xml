@@ -1,67 +1,67 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dependencies>
-   <includePath signature="/I..\..\..\..\..\Users\Tomek\Documents\GitHub /I..\..\..\..\..\Users\Tomek\Documents\GitHub\GPS-GSM_Tracker-\cmsis_lib /I..\..\..\..\..\Users\Tomek\Documents\GitHub\GPS-GSM_Tracker-\cmsis_boot /I..\..\..\..\..\Users\Tomek\Documents\GitHub\GPS-GSM_Tracker-\cmsis_lib\include /I..\..\..\..\..\Users\Tomek\Documents\GitHub\GPS-GSM_Tracker-\cmsis /I..\..\..\..\..\Users\Tomek\Documents\GitHub\GPS-GSM_Tracker-">
-      <source file="..\..\..\cmsis\core_cm4.h" lastModified="15b2e8f82a4">
+   <includePath signature="/I..\..\..\..\..\Projekty\PTM\GPS-GSM_Tracker-\cmsis_lib /I..\..\..\..\..\Projekty\PTM\GPS-GSM_Tracker- /I..\..\..\..\..\Projekty\PTM\GPS-GSM_Tracker-\cmsis /I..\..\..\..\..\Projekty\PTM /I..\..\..\..\..\Projekty\PTM\GPS-GSM_Tracker-\cmsis_boot /I..\..\..\..\..\Projekty\PTM\GPS-GSM_Tracker-\cmsis_lib\include">
+      <source file="..\..\..\cmsis\core_cm4.h" lastModified="15b20efa337">
          <include file="..\..\..\cmsis\core_cmInstr.h"/>
          <include file="..\..\..\cmsis\core_cmFunc.h"/>
          <include file="..\..\..\cmsis\core_cm4_simd.h"/>
       </source>
-      <source file="..\..\..\cmsis\core_cmInstr.h" lastModified="15b2e8f86b3">
+      <source file="..\..\..\cmsis\core_cmInstr.h" lastModified="15b20efa729">
       </source>
-      <source file="..\..\..\cmsis_boot\system_stm32f4xx.h" lastModified="15b2e8f7eee">
+      <source file="..\..\..\cmsis_boot\system_stm32f4xx.h" lastModified="15b20ef9f05">
       </source>
-      <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="15b2e8f7eee">
+      <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="15b20ef9f04">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="15b2e8f7efd">
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="15b20efdde5">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
       </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h" lastModified="15b2e8f7ef0">
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h" lastModified="15b20efb352">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\cmsis_lib\include\misc.h" lastModified="15b82935702">
+      <source file="..\..\..\cmsis_lib\include\misc.h" lastModified="15b21047625">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\cmsis_boot\stm32f4xx.h" lastModified="15bddb80be1">
+      <source file="..\..\..\cmsis_boot\stm32f4xx.h" lastModified="15bce8289f8">
          <include file="..\..\..\cmsis\core_cm4.h"/>
          <include file="..\..\..\cmsis_boot\system_stm32f4xx.h"/>
          <include file="..\..\..\cmsis_boot\stm32f4xx_conf.h"/>
       </source>
-      <source file="..\..\..\cmsis_boot\stm32f4xx_conf.h" lastModified="15b2e8fcd0d">
+      <source file="..\..\..\cmsis_boot\stm32f4xx_conf.h" lastModified="15b20efed22">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_usart.h"/>
          <include file="..\..\..\cmsis_lib\include\misc.h"/>
       </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h" lastModified="15b2e8f7ef5">
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h" lastModified="15b20efdde1">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_usart.h" lastModified="15b82935703">
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_usart.h" lastModified="15b20fde451">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="15b82935703">
+      <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="15b21047626">
          <include file="..\..\..\cmsis_lib\include\misc.h"/>
       </source>
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_usart.c" lastModified="15b82935704">
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_usart.c" lastModified="15b20fde469">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_usart.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
       </source>
-      <source file="..\..\..\cmsis\core_cmFunc.h" lastModified="15b2e8f868e">
+      <source file="..\..\..\cmsis\core_cmFunc.h" lastModified="15b20efa726">
       </source>
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="15b2e8f7ef8">
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="15b20ef9eb6">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
       </source>
-      <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="15b2e8f7ee7">
+      <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="15b20ef9ebd">
       </source>
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="15b2e8f7ef6">
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="15b20efb362">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
       </source>
-      <source file="..\..\..\cmsis\core_cm4_simd.h" lastModified="15b2e8f868d">
+      <source file="..\..\..\cmsis\core_cm4_simd.h" lastModified="15b20efa723">
       </source>
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h" lastModified="15b2e8f7ef0">
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h" lastModified="15b20ef9eb5">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
    </includePath>

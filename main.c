@@ -6,49 +6,56 @@
 #include <stdio.h>
 #include <string.h>
 //https://www.google.com/maps/search/09.1458483,016.5176548/
-int position;
-short number_size;
-short pos;
-char gsm_char, gps_char, gps_message[128], time[16], latitude[16], longitude[16], in_gsm_message[128], number[32];
+int gps_position;
+short gsm_pos;
+char gsm_char, gps_char, gps_message[128], time[16], latitude[16], longitude[16], in_gsm_message[128], out_gsm_message[1024];
 uint16_t podglad;
-void SendOrder(char order[128],int size)
+void Delay(volatile uint32_t delay)
 {
-	for(int i = 0; i<size; i++)
+	delay*=24;
+	while(delay--);
+}
+void Prepare_Message()
+{
+	strcpy(out_gsm_message,"Szerokosc: ");
+	strcat(out_gsm_message, latitude);
+	strcat(out_gsm_message, "\n");
+	strcat(out_gsm_message, "Wysokosc: ");
+	strcat(out_gsm_message, longitude);
+	//strcat(out_gsm_message, "\n");
+}
+void AT_Send(volatile char *c)
+{
+	while(*c)
 	{
-	 	USART_SendData(USART2, order[i]);
+		while(USART_GetFlagStatus(USART2, USART_FLAG_TXE) == RESET);
+		USART_SendData(USART2, *c);
+		while (USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);
+		Delay(50000);
+		*c++;
 	}
-	USART_SendData(USART2, '\r');
+}
+void Clear_Buffer()
+{
+	for( int i = 0; i < sizeof( in_gsm_message ); i++ )
+		in_gsm_message[ i ] = 0;
+	gsm_pos=0;
 }
 void SendPos()
 {
-	char out_message1[16]="\nlatitude: ";
-	char out_message2[16]="\nlongitude: ";
-	char out_message3[16]="\ntime: ";
-	for(int i = 0; i<11; i++)
+	do
 	{
-	 	USART_SendData(USART2, out_message1[i]);
-	}
-	for(int i = 0; i<16; i++)
-	{
-	 	USART_SendData(USART2, latitude[i]);
-	}
-	for(int i = 0; i<12; i++)
-	{
-	 	USART_SendData(USART2, out_message2[i]);
-	}
-	for(int i = 0; i<16; i++)
-	{
-	 	USART_SendData(USART2, longitude[i]);
-	}
-	for(int i = 0; i<7; i++)
-	{
-	 	USART_SendData(USART2, out_message3[i]);
-	}
-	for(int i = 0; i<16; i++)
-	{
-	 	USART_SendData(USART2, time[i]);
-	}
-	USART_SendData(USART2, 26);
+		podglad=50;
+		Clear_Buffer();
+		AT_Send("AT+CMGL=\"REC UNREAD\"\r");
+		Delay(80000);
+	}while(strstr(in_gsm_message, "+CMGL:")==NULL);
+	Prepare_Message();
+	podglad=100;
+	AT_Send("AT+CMGS=\"+48515304706\"\r");
+	AT_Send(out_gsm_message);
+	Delay(80000);
+	AT_Send("\032");
 }
 int IsDigit(int c)
 {
@@ -99,7 +106,7 @@ void SIM_Configuration() //PIN A 2, A 3
 	GPIO_PinAFConfig(GPIOA, GPIO_PinSource2, GPIO_AF_USART2);
 	GPIO_PinAFConfig(GPIOA, GPIO_PinSource3, GPIO_AF_USART2);
 	USART_InitTypeDef USART_InitStructure;
-	USART_InitStructure.USART_BaudRate = 9600;
+	USART_InitStructure.USART_BaudRate = 115200;
 	USART_InitStructure.USART_WordLength = USART_WordLength_8b;
 	USART_InitStructure.USART_StopBits = USART_StopBits_1;
 	USART_InitStructure.USART_Parity = USART_Parity_No;
@@ -115,9 +122,28 @@ void SIM_Configuration() //PIN A 2, A 3
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
 	NVIC_Init(&NVIC_InitStructure);
 	NVIC_EnableIRQ(USART2_IRQn);
+	do
+	{
+		podglad=20;
+		Clear_Buffer();
+		AT_Send("AT\r");
+		Delay(800000);
+	}while  (strstr(in_gsm_message, "OK")==NULL);
+	do
+	{
+		podglad=30;
+		Clear_Buffer();
+		AT_Send("AT+CSCS=\"GSM\"\r");
+		Delay(800000);
+	}while(strstr(in_gsm_message, "OK")== NULL);
+	do
+	{
+		podglad=40;
+		Clear_Buffer();
+		AT_Send("AT+CMGF=1\r");
+		Delay(800000);
+	}while (strstr(in_gsm_message, "OK")== NULL);
 
-	SendOrder("AT+CMGF=1",9);
-	SendOrder("AT+CSCS=\"GSM\"",13);
 }
 void USART3_IRQHandler(void)
 {
@@ -125,7 +151,7 @@ void USART3_IRQHandler(void)
     {
     	gps_char = USART_ReceiveData(USART3);
     	if (gps_char == '$')
-    		position = 0;
+    		gps_position = 0;
     	else if (gps_char == '\r')
     	{
     		if (!strncmp(gps_message, "GPGGA", 5))
@@ -144,60 +170,24 @@ void USART3_IRQHandler(void)
        	     }
        	}
       	else
-      		gps_message[position++] = gps_char;
+      		gps_message[gps_position++] = gps_char;
     }
 }
 void USART2_IRQHandler(void) //TEST
 {
-    // sprawdzenie flagi zwiazanej z odebraniem danych przez USART
     if(USART_GetITStatus(USART2, USART_IT_RXNE) != RESET)
     {
-        // odebrany bajt znajduje sie w rejestrze USART3->DR
     	gsm_char = USART_ReceiveData(USART2);
-    	if (gsm_char == '\r')
-    	{
-    		pos=0;
-
-    		if(strncmp(in_gsm_message, "+CMTI: \"SM\"",11))
-    		{
-    			SendOrder("AT+CMGL=\"REC UNREAD\"",20);
-    		}
-    		if(strncmp(in_gsm_message, "+CMGR: \"REC UNREAD\",\"",21))
-    		{
-    			number_size=0;
-    			short number_it=21;
-    			while(in_gsm_message[number_it]!='\"')
-    			{
-    				number[number_size]=in_gsm_message[number_it];
-    				number_size++;
-    				number_it++;
-    			}
-    			char send[64];
-    		    strcpy(send,"AT+SMGS=\"");
-    		    strcat(send,number);
-    		    strcat(send,"\"");
-    			SendOrder(send, 10 + number_size);
-    			SendPos();
-    			SendOrder("AT+CMGDA=\"DEL READ\"", 10 + number_size);
-
-    		}
-    	}
-    	else
-    		in_gsm_message[pos++] = gsm_char;
-    	//while(USART_GetFlagStatus(USART2, USART_FLAG_TXE) == RESET);
-    	// wyslanie danych
-    	//USART_SendData(USART2, byte);
-    	// czekaj az dane zostana wyslane
-    	//while (USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET);
+    	in_gsm_message[gsm_pos++] = gsm_char;
     }
 }
 int main(void)
 {
 	SystemInit();
-	SIM_Configuration();
 	GPS_Configuration();
-
+	SIM_Configuration();
     while(1)
     {
+    	SendPos();
     }
 }

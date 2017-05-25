@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=GPS-GSM_Tracker.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\GPS-GSM_Tracker -TC:\CooCox\CoIDE\configuration\ProgramData\GPS-GSM_Tracker/arm-gcc-link.ld -g">
-      <target file="GPS-GSM_Tracker.elf" lastModified="15bf34660f5">
-         <source file="..\obj\stm32f4xx_usart.o" lastModified="15bec413167"/>
-         <source file="..\obj\startup_stm32f4xx.o" lastModified="15bec413271"/>
-         <source file="..\obj\main.o" lastModified="15bf3464a30"/>
-         <source file="..\obj\stm32f4xx_rcc.o" lastModified="15bec4134b3"/>
-         <source file="..\obj\stm32f4xx_gpio.o" lastModified="15bec4135cd"/>
-         <source file="..\obj\system_stm32f4xx.o" lastModified="15bec4136d6"/>
-         <source file="..\obj\misc.o" lastModified="15bec4137ef"/>
-         <source file="..\obj\stm32f4xx_tim.o" lastModified="15bec413966"/>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=GPS-GSM_Tracker.map -O0 --gc-sections -LE:\Programy\CoIDE\configuration\ProgramData\GPS-GSM_Tracker -TE:\Programy\CoIDE\configuration\ProgramData\GPS-GSM_Tracker/arm-gcc-link.ld -g">
+      <target file="GPS-GSM_Tracker.elf" lastModified="15c3fdba5a0">
+         <source file="..\obj\stm32f4xx_usart.o" lastModified="15bf76be4cc"/>
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="15bf76be55f"/>
+         <source file="..\obj\main.o" lastModified="15c3fdba265"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="15bf76be9ed"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="15bf76bea92"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="15bf76beb0c"/>
+         <source file="..\obj\misc.o" lastModified="15bf76beb98"/>
+         <source file="..\obj\stm32f4xx_tim.o" lastModified="15bf76becb4"/>
       </target>
    </processor>
 </history>

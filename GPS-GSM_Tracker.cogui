@@ -25,9 +25,9 @@
 <input factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory">&#x0A;<subPage horizontalPosition="0" selectedItemId="524" subPageIndex="2" verticalPosition="528"/>
 </input>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/Tomek/Documents/GitHub/GPS-GSM_Tracker-/main.c" title="main.c" tooltip="C:/Users/Tomek/Documents/GitHub/GPS-GSM_Tracker-/main.c" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="E:/Projekty/PTM/GPS-GSM_Tracker-/main.c" title="main.c" tooltip="E:/Projekty/PTM/GPS-GSM_Tracker-/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/GPS-GSM_Tracker/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4097" selectionTopPixel="2748"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1359" selectionTopPixel="120"/>
 </editor>
 </editors>
 <views>
@@ -42,7 +42,7 @@
 <element path="/GPS-GSM_Tracker/cmsis_lib/include"/>
 </expanded>
 <selection>
-<element path="/GPS-GSM_Tracker/cmsis_boot/stm32f4xx.h"/>
+<element path="/GPS-GSM_Tracker/cmsis_boot/startup/startup_stm32f4xx.c"/>
 </selection>
 </viewState>
 </view>
@@ -145,132 +145,12 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GPS-GSM_Tracker/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GPS-GSM_Tracker/cmsis_boot/stm32f4xx_conf.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GPS-GSM_Tracker/cmsis_boot/stm32f4xx.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GPS-GSM_Tracker/cmsis_boot/stm32f4xx_conf.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GPS-GSM_Tracker/cmsis_boot/system_stm32f4xx.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GPS-GSM_Tracker/cmsis_boot/system_stm32f4xx.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/GPS-GSM_Tracker/cmsis_boot/startup/startup_stm32f4xx.c"/>
 </editors>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="173" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="3563" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="3619" y="35"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="3146" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="3254" y="25"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="3319" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="3400" y="54"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="213" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="323" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="3422" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position/>
-</item>
-<item historyLabel="main.c" index="0">
-<position/>
-</item>
-<item historyLabel="main.c" index="0">
-<position/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="3439" y="2"/>
-</item>
-<item historyLabel="stm32f4xx_conf.h" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="stm32f4xx.h" index="2">
-<position info="not_deleted" x="3574" y="0"/>
-</item>
-<item historyLabel="stm32f4xx_conf.h" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position/>
-</item>
-<item historyLabel="main.c" index="0">
-<position/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="5352" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="5411" y="22"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="6754" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="7929" y="3"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="7927" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="7929" y="3"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="6449" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="6825" y="43"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="287" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="5411" y="22"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="4202" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="4487" y="43"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="342" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="3810" y="41"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="4270" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="4290" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="725" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="5916" y="0"/>
-</item>
 <item historyLabel="main.c" index="0">
 <position info="not_deleted" x="4147" y="0"/>
 </item>
@@ -295,8 +175,131 @@
 <item historyLabel="main.c" index="0">
 <position/>
 </item>
-<item active="true" historyLabel="main.c" index="0">
+<item historyLabel="main.c" index="0">
 <position info="not_deleted" x="883" y="0"/>
+</item>
+<item historyLabel="stm32f4xx.h" index="1">
+<position info="not_deleted" x="1147" y="0"/>
+</item>
+<item historyLabel="stm32f4xx_conf.h" index="2">
+<position info="not_deleted" x="3646" y="0"/>
+</item>
+<item historyLabel="system_stm32f4xx.c" index="3">
+<position info="not_deleted" x="13301" y="0"/>
+</item>
+<item historyLabel="system_stm32f4xx.h" index="4">
+<position info="not_deleted" x="2096" y="0"/>
+</item>
+<item historyLabel="startup_stm32f4xx.c" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4230" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4371" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="5687" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4202" y="36"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4585" y="26"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4515" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="7059" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="6911" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="4841" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position/>
+</item>
+<item historyLabel="main.c" index="0">
+<position/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="6238" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="6021" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="747" y="32"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="780" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="1487" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="1424" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="5850" y="44"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="6019" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="1356" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position/>
+</item>
+<item historyLabel="main.c" index="0">
+<position/>
+</item>
+<item historyLabel="main.c" index="0">
+<position/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="765" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="1382" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="1261" y="42"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="513" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="519" y="41"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="742" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="375" y="24"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="1315" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="560" y="37"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="1140" y="0"/>
+</item>
+<item active="true" historyLabel="main.c" index="0">
+<position info="not_deleted" x="1231" y="50"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -305,11 +308,20 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" tooltip="GPS-GSM_Tracker/cmsis_boot/stm32f4xx.h">
-<persistable path="/GPS-GSM_Tracker/cmsis_boot/stm32f4xx.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f4xx.c" tooltip="GPS-GSM_Tracker/cmsis_boot/startup/startup_stm32f4xx.c">
+<persistable path="/GPS-GSM_Tracker/cmsis_boot/startup/startup_stm32f4xx.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f4xx.h" tooltip="GPS-GSM_Tracker/cmsis_boot/system_stm32f4xx.h">
+<persistable path="/GPS-GSM_Tracker/cmsis_boot/system_stm32f4xx.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f4xx.c" tooltip="GPS-GSM_Tracker/cmsis_boot/system_stm32f4xx.c">
+<persistable path="/GPS-GSM_Tracker/cmsis_boot/system_stm32f4xx.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_conf.h" tooltip="GPS-GSM_Tracker/cmsis_boot/stm32f4xx_conf.h">
 <persistable path="/GPS-GSM_Tracker/cmsis_boot/stm32f4xx_conf.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" tooltip="GPS-GSM_Tracker/cmsis_boot/stm32f4xx.h">
+<persistable path="/GPS-GSM_Tracker/cmsis_boot/stm32f4xx.h"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="GPS-GSM_Tracker/main.c">
 <persistable path="/GPS-GSM_Tracker/main.c"/>
@@ -342,16 +354,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="test/main.c">
 <persistable path="/test/main.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="GPS-GSM_Tracker/main.c">
-<persistable path="/GPS-GSM_Tracker/main.c"/>
-</file>
-<file factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser" name="Repository" tooltip="Repository">
-<persistable>&#x0A;<subPage/>
-</persistable>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="GPS-GSM_Tracker-/main.c">
-<persistable path="/GPS-GSM_Tracker-/main.c"/>
 </file>
 </mruList>
 </workbench>
