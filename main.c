@@ -52,7 +52,7 @@ void SendPos()
 	}while(strstr(in_gsm_message, "+CMGL:")==NULL);
 	Prepare_Message();
 	podglad=100;
-	AT_Send("AT+CMGS=\"+48515304706\"\r");
+	AT_Send("AT+CMGS=\"+48\"\r");
 	AT_Send(out_gsm_message);
 	Delay(80000);
 	AT_Send("\032");
